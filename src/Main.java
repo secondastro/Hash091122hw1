@@ -1,4 +1,6 @@
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Random;
 import java.util.Set;
 
 public class Main {
@@ -22,10 +24,10 @@ public class Main {
 
 
         RecipeList recipeList = new RecipeList();
-        Set<Product> cocktailIngredients  = new HashSet<>();
+        Set<Product> cocktailIngredients = new HashSet<>();
         cocktailIngredients.add(vodka);
         cocktailIngredients.add(orangeJuice);
-        Recipe otvertka=new Recipe("Отвёртка", cocktailIngredients);
+        Recipe otvertka = new Recipe("Отвёртка", cocktailIngredients);
         recipeList.addRecipe(otvertka);
 
         Set<Product> hotDogIngredients = new HashSet<>();
@@ -39,5 +41,19 @@ public class Main {
         System.out.println(productList);
         System.out.println("Стоимость продуктов для рецепта " +
                 otvertka.getName().toLowerCase() + ": " + otvertka.getRecipePrice());
+
+
+        Set<Integer> integers = new HashSet<>(20);
+        Random random = new Random();
+        while (integers.size() < 20) {
+            integers.add(random.nextInt(1000));
         }
+        Iterator<Integer> integerIterator = integers.iterator();
+        while (integerIterator.hasNext()) {
+            if (integerIterator.next() % 2 != 0) {
+                integerIterator.remove();
+            }
+        }
+        System.out.println(integers);
     }
+}
