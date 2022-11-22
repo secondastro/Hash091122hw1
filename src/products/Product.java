@@ -1,3 +1,5 @@
+package products;
+
 import java.util.Objects;
 
 public class Product {
@@ -53,6 +55,6 @@ public class Product {
     public String toString() {
         String checkedString = this.isChecked()?"Да":"Нет";
 
-        return String.format("%s, цена: %s, вес: %s, куплен: %s", this.name, this.price, this.weight, this.checked);
+        return String.format("%s, цена: %s, вес: %s, куплен: %s", this.name, this.price, this.weight, checkedString);
     }
 }

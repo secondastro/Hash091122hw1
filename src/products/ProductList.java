@@ -1,11 +1,10 @@
+package products;
+
 import java.util.*;
 
 public class ProductList {
 
     private final Set<Product> products = new HashSet<>();
-
-
-    ;
 
     public void addProduct(Product product) {
         if (product == null) {

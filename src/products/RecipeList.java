@@ -1,3 +1,5 @@
+package products;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +19,7 @@ public class RecipeList {
         StringBuilder s = new StringBuilder();
         s.append("Список рецептов: " + '\n');
         for (Recipe recipe: recipes) {
-            s.append(recipe).append('\n');
+            s.append(recipe).append(recipe.getRecipePrice()).append(" рублей").append('\n').append('\n');
         }
         return s.toString();
     }
